@@ -1,0 +1,33 @@
+<h2><%= @place.title%></h2>
+
+<p><%= link_to "edit", "/places/#{@place.id}/edit"%>
+    <br><br>
+
+    <%= image_tag @place.url%>
+    <br><br>
+    <%=simple_format @place.description %>
+
+
+    <h3>Review:</h3>
+<form action="/places/<%= @place.id %>/review">
+    <p>Title: <input type="text" name="title">
+    Score: <select name="score">
+    <option value ="1">1</option><option value ="2">2</option><option value ="3">3</option><option value ="4">4</option><option value ="5">5</option>
+        </select></p>
+    <p>Comments: <textarea name="description" rows="5"cols="100"></textarea></p>
+    <p><input type="submit" value="Send"></p>
+    </form>
+
+
+</form>
+
+<% @reviews.each do |review|%>
+   <b><i><%= review.title%></i></b>
+    <br>
+    <%= review.score%>
+    <br>
+    <br>
+    <%= review.description %>
+</p>
+<% end%>
+
