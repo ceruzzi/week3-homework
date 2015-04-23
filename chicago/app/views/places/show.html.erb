@@ -14,7 +14,7 @@
     Score: <select name="score">
     <option value ="1">1</option><option value ="2">2</option><option value ="3">3</option><option value ="4">4</option><option value ="5">5</option>
         </select></p>
-    <p>Comments: <textarea name="description" rows="5"cols="100"></textarea></p>
+    <p>Comments:<br> <textarea name="description" rows="5"cols="100"></textarea></p>
     <p><input type="submit" value="Send"></p>
     </form>
 
@@ -22,12 +22,11 @@
 </form>
 
 <% @reviews.each do |review|%>
-   <b><i><%= review.title%></i></b>
+    <p><hr><br><b><i><%= review.title%></i></b>
     <br>
-    <%= review.score%>
+    Score: <%= review.score%>
     <br>
-    <br>
-    <%= review.description %>
+    Comments: <%= review.description %>
 </p>
 <% end%>
 
